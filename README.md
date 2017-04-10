@@ -1,0 +1,1 @@
+# angular-decorated-resource
