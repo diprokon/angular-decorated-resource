@@ -1,12 +1,15 @@
-const utils = angular.module('dResource.utils', []);
+const utilsMod = angular.module('dResource.utils', []);
 
-require('./resourceExtend')(utils);
+import resourceExtend from './resourceExtend';
+resourceExtend(utilsMod);
 
 const mod = angular.module('dResource', [
     'ngResource',
     'dResource.utils'
 ]);
 
-require('./dResource')(mod);
+
+import dResource from './dResource';
+dResource(mod);
 
 module.exports = mod.name;

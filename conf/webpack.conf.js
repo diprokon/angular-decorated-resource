@@ -38,7 +38,7 @@ let webpackConf = {
             }
         ]
     },
-    devtool: PROD ? 'source-map' : TEST ? 'inline-source-map' : 'eval-source-map',
+    devtool: PROD ? 'source-map' : 'inline-source-map',
     plugins: []
 };
 

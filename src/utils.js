@@ -1,4 +1,8 @@
 export function bind(origFn, context) {
+    if (origFn.__origFn) {
+        origFn = unbind(origFn);
+    }
+
     let fn = function () {
         return origFn.apply(context, arguments);
     };
@@ -10,13 +14,12 @@ export function unbind(fn) {
     return fn.__origFn || fn;
 }
 
-export function appendTransform(defaults, transform) {
-    // We can't guarantee that the default transformation is an array
-    defaults = defaults ? defaults : [];
+export function concat(defaults = [], items) {
+    // We can't guarantee that the default is an array
     defaults = angular.isArray(defaults) ? defaults : [defaults];
 
-    // Append the new transformation to the defaults
-    return defaults.concat(transform);
+    // Append the new elements to the defaults
+    return defaults.concat(items);
 }
 
 export function each(obj, callback) {

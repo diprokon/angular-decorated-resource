@@ -1,4 +1,4 @@
-describe('myFactory', function () {
+/*describe('myFactory', function () {
     // Load your module.
     beforeEach(angular.mock.module('myMod'));
 
@@ -13,4 +13,4 @@ describe('myFactory', function () {
         setTimeout(() => {}, 1000);
         expect(myFac).toBeDefined();
     }));
-});
+});*/

@@ -1,4 +1,4 @@
-import {bind, unbind, appendTransform} from './utils'
+import {bind, unbind, concat} from './utils'
 
 export default function (mod) {
     function factory($q) {
@@ -91,11 +91,11 @@ export default function (mod) {
          */
         function transformAction(action, transform) {
             if (transform.request) {
-                action.transformRequest = appendTransform(action.transformRequest, transform.request);
+                action.transformRequest = concat(action.transformRequest, transform.request);
             }
 
             if (transform.response) {
-                action.transformResponse = appendTransform(action.transformResponse, transform.response);
+                action.transformResponse = concat(action.transformResponse, transform.response);
             }
         }
 
